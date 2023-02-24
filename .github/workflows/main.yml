@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      - DEV1
+      - main
 name: 🚀 Deploy website on push
 
 jobs:
@@ -18,11 +18,11 @@ jobs:
           server: ${{ secrets.FTP_HOST}}
           username: ${{ secrets.FTP_USER}}
           password: ${{ secrets.FTP_PASSWORD}}
-          server-dir: public_html/DEV1
+          server-dir: public_html/
 
           # exclude: .git*
           #   - **.git*
           #   - .git*/**
           #   - **/.git*/**
           #   - README*
-          #   - .htaccess
+          #   - .htaccess sss
