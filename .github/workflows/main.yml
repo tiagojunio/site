@@ -16,7 +16,7 @@ jobs:
         with:
           server: ${{ secrets.ftp_host}}
           username: ${{ secrets.ftp_user}}
-          password: ${{ secrets.ftp_password }}
+          password: ${{ secrets.ftp_password}}
           server-dir: /public_html/DEV1/
           # exclude: .git*
           #   - **.git*
