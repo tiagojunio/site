@@ -5,24 +5,17 @@ on:
 name: 🚀 Deploy website on push
 
 jobs:
-  web-deploy:
-    name: 🎉 Deploy
+  build:
     runs-on: ubuntu-latest
+    env:
+      SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      KNOWN_HOSTS: ${{ secrets.KNOWN_HOSTS }}
     steps:
-      - name: 🚚 Get latest code
+      - name: Checkout
         uses: actions/checkout@v2
-
-      - name: 📂 Sync files
-        uses: SamKirkland/FTP-Deploy-Action@4.0.0
-        with:
-          server: ${{ secrets.FTP_HOST}}
-          username: ${{ secrets.FTP_USER}}
-          password: ${{ secrets.FTP_PASSWORD}}
+      - name: SSH and Deploy
+        uses: easingthemes/ssh-deploy@v2.1.5
+        env:
+          SSH_PRIVATE_KEY: ${{ env.SSH_PRIVATE_KEY }}
+          KNOWN_HOSTS: ${{ env.KNOWN_HOSTS }}
           server-dir: public_html/
-
-          # exclude: .git*
-          #   - **.git*
-          #   - .git*/**
-          #   - **/.git*/**
-          #   - README*
-          #   - .htaccess sss
