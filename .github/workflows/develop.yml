@@ -18,9 +18,9 @@ jobs:
           username: ${{ secrets.ftp_user}}
           password: ${{ secrets.ftp_password }}
           server-dir: public_html/DEV1/
-          exclude: .git*
-            - **.git*
-            - .git*/**
-            - **/.git*/**
-            - README*
-            - .htaccess
+          # exclude: .git*
+          #   - **.git*
+          #   - .git*/**
+          #   - **/.git*/**
+          #   - README*
+          #   - .htaccess
