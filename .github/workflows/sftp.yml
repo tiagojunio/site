@@ -23,8 +23,10 @@ jobs:
       - name: SFTP Deploy
         uses: wlixcc/SFTP-Deploy-Action@v1.2.1
         with:
-          username: tiagojunio
-          server: tiagojunio.com.br
+          # username: tiagojunio
+          # server: tiagojunio.com.br
+          username: ${{ secrets.REMOTE_USER }}
+          server: ${{ secrets.REMOTE_HOST }}
           port: 22 # default is 22
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
 
