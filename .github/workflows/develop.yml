@@ -38,7 +38,7 @@ jobs:
           # will put all file under this path
           local_path: ./* # default is ./*
           # files will copy to under remote_path
-          remote_path: /home/tiagojunio/public_html/develop/
+          remote_path: /home/tiagojunio/public_html/DEV/
 
           # sftp args
           args: '-o ConnectTimeout=5'
